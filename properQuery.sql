@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS faculty (
 
 -- Insert data into faculty table
 INSERT INTO faculty VALUES ('F12', 'Mr.xyz', '7632458741', '123', '2023-2024', 'xyz@gmail.com', 'M.Tech. Ph.D', 'CSE', 15, 0);
-INSERT INTO faculty VALUES ('F11', 'Mrs.V.Sangeetha', '9632458741', '123', '2023-2024', 'sangeetha@gmail.com', 'M.Tech. Ph.D', 'CSE', 25, 0);
+INSERT INTO faculty VALUES ('F11', 'Mrs.abc', '9632458741', '123', '2023-2024', 'abc@gmail.com', 'M.Tech. Ph.D', 'CSE', 25, 0);
 
 -- Create the subject table
 CREATE TABLE IF NOT EXISTS subject (
@@ -51,10 +51,10 @@ CREATE TABLE IF NOT EXISTS student (
 );
 
 -- Insert data into student table
-INSERT INTO student VALUES ('A21126510058', 'SESETTI VIDYA SRI', '123', 0, '2023-2024', 'B.TECH', 'sesettividyasri.21.cse@anits.edu.in', '9687324561', '9985084036', 'CSE', 'A', 2, 3, 0);
-INSERT INTO student VALUES ('A21126510026', 'KARRI LOHITHA', '123', 0, '2023-2024', 'B.TECH', 'karrilohitha.21.cse@anits.edu.in', '7864218964', '9951793723', 'CSE', 'A', 2, 3, 0);
-INSERT INTO student VALUES ('A21126510029', 'SNEHALATHA KILLI', '123', 0, '2023-2024', 'B.TECH', 'snehalatha.21.cse@anits.edu.in', '9687324561', '7459631865', 'CSE', 'A', 2, 3, 0);
-INSERT INTO student VALUES ('A21126510031', 'KOMMANA JAYASREE', '123', 1, '2023-2024', 'B.TECH', 'kommanajayasree.21.cse@anits.edu.in', '9687324561', '9985084036', 'CSE', 'A', 2, 3, 0);
+INSERT INTO student VALUES ('cs58', 'olivia', '123', 0, '2023-2024', 'B.TECH', 'olivia@gmail.com', '9874568753', '6398745687', 'CSE', 'A', 2, 3, 0);
+INSERT INTO student VALUES ('cs26', 'kate', '123', 0, '2023-2024', 'B.TECH', 'kate@gmail.com', '7689458756', '9951793723', 'CSE', 'A', 2, 3, 0);
+INSERT INTO student VALUES ('cs29', 'lily', '123', 0, '2023-2024', 'B.TECH', 'lily@gmail.com', '9874568753', '7459631865', 'CSE', 'A', 2, 3, 0);
+INSERT INTO student VALUES ('cs31', 'rose', '123', 1, '2023-2024', 'B.TECH', 'rose@gmail.com', '9874568753', '6398745687', 'CSE', 'A', 2, 3, 0);
 
 -- Create the parent table
 CREATE TABLE IF NOT EXISTS parent (
@@ -66,10 +66,10 @@ CREATE TABLE IF NOT EXISTS parent (
 );
 
 -- Insert data into parent table
-INSERT INTO parent VALUES ('SESETTI SRINIVAS', '9985084036', 'A21126510058', 0);
-INSERT INTO parent VALUES ('SESETTI SRINIVAS', '9985084037', 'A21126510026', 0);
-INSERT INTO parent VALUES ('SESETTI SRINIVAS', '9985084035', 'A21126510031', 0);
-INSERT INTO parent VALUES ('SESETTI SRINIVAS', '9985084026', 'A21126510029', 0);
+INSERT INTO parent VALUES ('bhgy', '6398745687', 'cs58', 0);
+INSERT INTO parent VALUES ('asdse', '54987989656', 'cs26', 0);
+INSERT INTO parent VALUES ('tyre5', '8978564946', 'cs31', 0);
+INSERT INTO parent VALUES ('njhh', '945929262', 'cs29', 0);
 
 -- Create the student_feedback table
 CREATE TABLE IF NOT EXISTS student_feedback (
