@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Bar Graphs</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            font-family: 'Poppins';   
+            background-color: rgb(255, 255, 255);
+        }
+   .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 200px;
+  margin: 80px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h2 style="margin-left:130px;">Student</h2>
+      <canvas id="feedbackChart1">
+      </canvas>
+    </div>
+    <div class="box">
+      <h2 style="margin-left:130px;">Alumni</h2>
+      <canvas id="feedbackChart2"></canvas>
+    </div>
+    <div class="box">
+      <h2 style="margin-left:130px;">Faculty</h2>
+      <canvas id="feedbackChart3"></canvas>
+    </div>
+    <div class="box">
+      <h2 style="margin-left:130px;">Parents</h2>
+      <canvas id="feedbackChart4"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Assuming feedbackData1, feedbackData2, feedbackData3, and feedbackData4 are available from the server for each graph
+    const feedbackData1 = [
+      { question: 'Machine Learning', value: 4 },
+      { question: 'Web Technologies', value: 5 },
+      { question: 'CNS', value: 3 },
+      { question: 'NNDL', value: 4 },
+      { question: 'OOSE', value: 3 },
+      { question: 'IRE', value: 4 },
+      { question: 'QA & VA', value: 5 }
+    ];
+    const feedbackData2 = [
+      { question: 'Overall Experience', value: 4 },
+      { question: 'Academic Experience', value: 3 },
+      { question: 'Teaching Experience', value: 5 },
+      { question: 'Facilities and Resources', value: 4 }
+    ];
+    const feedbackData3 = [
+      { question: 'Course Content', value: 4 },
+      { question: 'Teaching Effectiveness', value: 3 },
+      { question: 'Course Structure', value: 5 }
+    ];
+    const feedbackData4 = [
+      { question: 'Academic Support', value: 4 },
+      { question: 'Safety Satisfaction', value: 3 },
+      { question: 'Extracurricular Quality', value: 5 },
+      { question: 'Areas for Improvement', value: 4 },
+      { question: 'Overall Parental Satisfaction', value: 4 },
+
+    ];
+    // Repeat similar data for feedbackData2, feedbackData3, and feedbackData4
+
+    // Function to create chart for a specific canvas ID and feedback data
+    function createChart(canvasId, feedbackData) {
+      const labels = feedbackData.map(item => item.question);
+      const data = feedbackData.map(item => item.value);
+
+      const ctx = document.getElementById(canvasId).getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Feedback Ratings',
+            data: data,
+            backgroundColor: [
+              '#78B4E2',
+              '#123754',
+              '#194E76',
+              '#246FA8',
+              '#2B85CA',
+              '#57A2DB'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 0.5
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          },
+          barPercentage: 0.4, // Adjust bar width, 0.5 means 50% of the available space
+    categoryPercentage: 0.8,
+    barThickness: 'flex', 
+        }
+      });
+    }
+
+    // Create charts for each canvas
+    createChart('feedbackChart1', feedbackData1);
+    createChart('feedbackChart2', feedbackData2);
+    createChart('feedbackChart3', feedbackData3);
+    createChart('feedbackChart4', feedbackData4);
+  </script>
+</body>
+</html>

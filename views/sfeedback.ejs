@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        .container {
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            max-height: 400px; /* Adjust the max-height as needed */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            /* float: right;  */
+            margin-top: 20px; /* Add margin to separate from the last form */
+        }
+    </style>
+</head>
+<body>
+    <h2>student:<%= stuid%></h2>
+    <form id="feedbackForm" action="/sfeedback" method="post" onsubmit="return validateForm()">
+    <% faculties.forEach((faculty, index) => { %>
+        <div class="container">
+            <h2><%= facultyName[index] %> - <%= subjectName[index] %></h2>
+            <input type="hidden" name="facultyName_<%= index %>" value="<%= facultyName[index] %>">
+            <input type="hidden" name="subjectName_<%= index %>" value="<%= subjectName[index] %>">
+            <input type="hidden" name="stuid" value="<%=stuid%>">
+
+           <table>
+            <thead>
+                <tr>
+                    <th>Questions</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Was the syllabus completed on time?</td>
+                    <td>
+                        <input type="radio" name="syllabus_completion_<%= index %>" value="excellent"> Excellent
+                        <input type="radio" name="syllabus_completion_<%= index %>" value="good"> Good
+                        <input type="radio" name="syllabus_completion_<%= index %>" value="satisfactory"> Satisfactory
+                        <input type="radio" name="syllabus_completion_<%= index %>" value="poor"> Poor
+                        <input type="radio" name="syllabus_completion_<%= index %>" value="bad"> Bad
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>Were doubts clarified effectively?</td>
+                    <td>
+                        <input type="radio" name="doubts_clarification_<%= index %>" value="excellent"> Excellent
+                        <input type="radio" name="doubts_clarification_<%= index %>" value="good"> Good
+                        <input type="radio" name="doubts_clarification_<%= index %>" value="satisfactory"> Satisfactory
+                        <input type="radio" name="doubts_clarification_<%= index %>" value="poor"> Poor
+                        <input type="radio" name="doubts_clarification_<%= index %>" value="bad"> Bad
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>Was the faculty impartial in their treatment?</td>
+                    <td>
+                        <input type="radio" name="impartiality_<%= index %>" value="excellent"> Excellent
+                        <input type="radio" name="impartiality_<%= index %>" value="good"> Good
+                        <input type="radio" name="impartiality_<%= index %>" value="satisfactory"> Satisfactory
+                        <input type="radio" name="impartiality_<%= index %>" value="poor"> Poor
+                        <input type="radio" name="impartiality_<%= index %>" value="bad"> Bad
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td>Was the faculty voice is audible and clear?</td>
+                    <td>
+                        <input type="radio" name="audible_<%= index %>" value="excellent"> Excellent
+                        <input type="radio" name="audible_<%= index %>" value="good"> Good
+                        <input type="radio" name="audible_<%= index %>" value="satisfactory"> Satisfactory
+                        <input type="radio" name="audible_<%= index %>" value="poor"> Poor
+                        <input type="radio" name="audible_<%= index %>" value="bad"> Bad
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td>Was the faculty coming on time to class?</td>
+                    <td>
+                        <input type="radio" name="ontime_<%= index %>" value="excellent"> Excellent
+                        <input type="radio" name="ontime_<%= index %>" value="good"> Good
+                        <input type="radio" name="ontime_<%= index %>" value="satisfactory"> Satisfactory
+                        <input type="radio" name="ontime_<%= index %>" value="poor"> Poor
+                        <input type="radio" name="ontime_<%= index %>" value="bad"> Bad
+                    </td>
+                    
+                </tr>
+        
+                <!-- Add more questions here -->
+            </tbody>
+        </table>
+        </div>
+        <% }); %>
+        <button type="submit" id="submitFeedback" class="button">Submit Feedback</button> <!-- Button outside the loop -->
+    </form>
+
+</body>
+<script>
+function validateForm() {
+    // Get all radio button groups
+    const radioGroups = document.querySelectorAll('input[type="radio"]');
+    
+    // Check if at least one option is selected in each group
+    for (let i = 0; i < radioGroups.length; i++) {
+        const group = radioGroups[i].name;
+        const checkedOptions = document.querySelectorAll(`input[name^="${group}"]:checked`);
+        
+        if (checkedOptions.length === 0) {
+            alert(`Please select an option for ${group}`);
+            return false; // Prevent form submission if any group has no selection
+        }
+    }
+    
+    return true; // Allow form submission if all groups have at least one selection
+}
+</script

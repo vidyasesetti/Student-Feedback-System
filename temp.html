@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stakeholder Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Stakeholder Registration Form</h2>
+    <form id="stakeholderForm">
+        <div class="form-group">
+            <label for="role">Select Role:</label>
+            <select id="role" onchange="toggleFields()">
+                <option value="recruiter">Campus Recruiter</option>
+                <option value="trainer">Training Body</option>
+            </select>
+        </div>
+        <div class="form-group" id="companyName">
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required>
+        </div>
+        <div class="form-group" id="visitDate" style="display: none;">
+            <label for="visitDate">Date of Visit:</label>
+            <input type="date" id="visitDate" name="visitDate" required>
+        </div>
+        <div class="form-group">
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+        
+        <!-- Additional questions for recruiters -->
+        <div class="form-group" id="recruiterQuestions" style="display: none;">
+            <label for="recruiterSatisfaction">Satisfaction with Students:</label>
+            <input type="text" id="recruiterSatisfaction" name="recruiterSatisfaction">
+            <label for="recruiterWillingness">Willingness to Recruit Again:</label>
+            <input type="text" id="recruiterWillingness" name="recruiterWillingness">
+            <label for="studentKnowledge">Assessment of Student Knowledge:</label>
+            <input type="text" id="studentKnowledge" name="studentKnowledge">
+        </div>
+        
+        <!-- Additional questions for training bodies -->
+        <div class="form-group" id="trainerQuestions" style="display: none;">
+            <label for="trainerFeedback">Feedback on Students:</label>
+            <textarea id="trainerFeedback" name="trainerFeedback" rows="4"></textarea>
+            <label for="trainerKnowledge">Assessment of Student Knowledge:</label>
+            <input type="text" id="trainerKnowledge" name="trainerKnowledge">
+        </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    function toggleFields() {
+        var role = document.getElementById("role").value;
+        var recruiterFields = document.getElementById("recruiterQuestions");
+        var trainerFields = document.getElementById("trainerQuestions");
+
+        if (role === "recruiter") {
+            recruiterFields.style.display = "block";
+            trainerFields.style.display = "none";
+        } else if (role === "trainer") {
+            recruiterFields.style.display = "none";
+            trainerFields.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

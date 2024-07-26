@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student</title>
+<style>
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            font-family: 'Poppins';   
+            background-color: rgb(255, 255, 255);
+        }
+        .sidebar{
+            width: 17%;
+            height: 100%;
+            float: left;
+            background-color:#263544 ;
+        }
+        .content{
+            background-color: rgb(255, 255, 255);
+            width: 83%;height: 100%;float: left;
+        }
+        .top{
+            height: 10%;
+            width: 100%;
+            box-shadow: 5px 5px 15px #242e39;
+            
+        }
+        .bottom{
+            width: 100%;
+        }
+        
+        .top1{
+            height:10%;
+            float: top;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 15px #cdd2d8;
+        }
+        .bot1{
+            /* height: 90%; */
+            float: top;
+            background-color: rgb(255, 255, 255);
+            margin: 30px;
+        }
+        .container{
+            
+            height: 400px;
+            width:90%;
+            background-color: white;
+            box-shadow: 5px 5px 15px #cdd2d8;
+            border-radius: 10px;
+            /* align-items: center; */
+           /* margin:0 auto; */
+           margin: 40px;
+        }
+        .cont2{
+            display: flex;
+
+        }
+        .left-col,.right-col{
+            flex:1;padding: 10px;
+            margin: 30px;
+        }
+        .left-col p,.right-col p{
+            padding: 10px;
+        }
+        .heading h2{
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .details li{
+            float: right;
+            list-style-type: none;
+        }
+                .logo img {
+                    width: 80px;
+                    height: 60px;
+                    margin: 12px 20px;
+                }
+                @media (max-width: 768px) {
+                    .container {
+                        padding: 10px; 
+                    }
+                    }
+
+            .dropdown-content {
+                color: white;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content h4 {
+                color: black; 
+            }
+
+            .dropdown-content h4 {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .dropdown-content a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 100;
+            }
+
+            .dropdown-content1 a:hover {
+                background-color: #ccc;
+            }
+            .dropdown-content1 {
+                color: white;
+            }
+
+            .dropdown1:hover .dropdown-content1 {
+                display: block;
+                background-color: #ffffff;
+            }
+
+            .dropdown1:hover .dropdown-content1 h4 {
+                color: black; 
+            }
+
+            .dropdown-content1 h4 {
+                margin: 10px;
+                padding: 10px;
+                /* margin-left: 20px; */
+            }
+
+            .dropdown-content1 a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 100;
+            }
+
+            .dropdown-content1 a:hover {
+                background-color: #ffffff;
+            }
+        .sub table {
+        border-collapse: collapse;
+        width: 60%;
+        }
+        .sub th,.sub td {
+        text-align: left;
+        padding: 8px;
+        }
+       .sub  th {
+        background-color: #242e39;
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        }
+        .sub tr:not(:last-child) {
+        border-bottom: 1px dotted rgb(103, 98, 98);
+        }
+        button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .container1{
+            height: 500px;
+            width:30%;
+            background-color: white;
+            box-shadow: 5px 5px 15px #cdd2d8;
+            border-radius: 10px;
+           margin:0 auto;
+           margin-top: 100px;
+           float: left;
+           color: #2f7686;
+           margin-left: 40px;
+           margin: 40px;
+        }
+        .photo{
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+
+        }
+        .photo img{
+            height: auto;
+            width: 100%;
+            border-radius: 10px;
+            /* overflow: hidden; */
+        }
+        button[type="submit"],[type="reset"] {
+        /* margin-left: 40px; */
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+   
+    button[type="submit"]:hover,[type="reset"]:hover  {
+        background-color: #45a049;
+    }
+    .container1 h3{
+        margin: 20px;
+    }
+    .form {
+    display: none;
+    height: 750px;
+    width: 950px;
+    float: left;
+    margin-top: 40px; 
+    margin-left: 30px;
+    background-color: white;
+    box-shadow: 5px 5px 15px #cdd2d8;
+    border-radius: 10px;
+}
+
+       .form table {
+        /* border-collapse: collapse; */
+        width: 90%;
+        height:650px;
+        margin: 0 auto;
+        margin-top: 30px;
+        }
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+        th {
+        background-color: #6a939c;
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        }
+        .first-part {
+            color: black;
+        font-size: 23px; 
+        }
+
+        .second-part {
+        font-size: 19px; 
+        }
+        .table{
+            padding: 5px;
+            margin: 2px;
+            width: 90%;
+        }
+
+</style>
+</head>
+<body id="body">
+    
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="https://onlinesystem.anits.edu.in/images/logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="bottom">
+            <ul style="font-size:larger;">
+            <li class="dropdown">
+                <div class="dropdown-content">
+                    <a href="#" onclick="refreshPage()" id="fdb"><h4>Feedback</h4></a>
+                    </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-content">
+                    <a href="aldashboard" id="dashboard"><h4>Dashboard</h4></a>
+                    </div>
+            </li>
+           
+            <li class="dropdown">
+                <div class="dropdown-content">
+                   <a href="/changePassword" id="reset"><h4>Change Password</h4></a>
+                </div>
+            </li>
+            <!-- <li class="dropdown">
+                <div class="dropdown-content">
+                   <a href="/stat" target="_blank" id="stat"><h4>Check Feedback</h4></a>
+                </div>
+            </li> -->
+            </ul>
+        </div>
+        <li class="dropdown1">
+            <div class="dropdown-content1">
+        <a href="/logout" id="logout" style="font-size:larger;"><h4>Logout</h4></a>
+            </div>
+        </li>
+        
+        
+    </div>
+    <div class="content">
+        <div class="top1">
+            <div class="details">
+                <ul> 
+                <li style="margin: 30px;margin-right: 70px;">
+                    <p id="uname"><%= alumni.name %></p><li>    
+                <li style="margin-right: 10px;margin-top: 15px;"><img style="border-radius: 50%;" id="accnt1" src="https://www.hirawatsonline.com/cdn/shop/collections/anil-neerukonda.jpg?v=1703148936&width=1500" height="50px"></li>
+                
+            </ul>
+            </div>
+           
+        </div>
+        <div class="bot1" id="bot1">
+            <h1>Welcome <%= alumni.name %>!</h1>
+
+            <br>
+           <div class="sub">
+            <div class="container1">
+                <div class="profile">
+                    <div class="photo">
+                        <img  src="/img/logo/alum_main.jpg" alt="alumni">
+                    </div>
+                </div>
+               
+               <h3>
+               <h3>
+                <span class="first-part">Status :</span>
+                <span class="second-part"> <%= status == 1 ? 'Feedback given' : 'Not Given' %></span>
+               </h3>
+                
+               
+                <% if (status != 1) { %>
+                    <button id="giveFeedbackBtn" type="submit" style="margin-left: 100px;">Give Feedback</button>
+                <% } %>
+       </div>
+       <div class="form">
+        <form action="/alfeedback" method="post">
+          
+            <input type="hidden" name="roll" value="<%= alumni.roll_no %>">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Context</th>
+                        <th>Questions</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                  <tr>
+                    <td>Overall Experience</td>
+                        <td>How would you rate your overall experience at this college?</td>
+                        <td>
+                    <input type="radio" name="q1" value="5" required="required"> Excellent
+                    <input type="radio" name="q1" value="4" required="required" >Good
+                    <input type="radio" name="q1" value="3" required="required"> Satisfactory
+                    <input type="radio" name="q1" value="2" required="required"> Poor
+                    <input type="radio" name="q1" value="1" required="required"> Bad
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>Academic Experience</td>
+                        <td>How did you find the academic programs offered at this college to be comprehensive and relevant.</td>
+                        <td>
+                            <input type="radio" name="q2" value="5" required="required"> Excellent
+                            <input type="radio" name="q2" value="4" required="required"> Good
+                            <input type="radio" name="q2" value="3" required="required"> Satisfactory
+                            <input type="radio" name="q2" value="2" required="required"> Poor
+                            <input type="radio" name="q2" value="1" required="required"> Bad
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Teaching Experience</td>
+                            <td>How would you rate the quality of instruction and support from faculty members?</td>
+                            <td>
+                                <input type="radio" name="q3" value="5" required="required"> Excellent
+                                <input type="radio" name="q3" value="4" required="required"> Good
+                                <input type="radio" name="q3" value="3" required="required"> Satisfactory
+                                <input type="radio" name="q3" value="2" required="required"> Poor
+                                <input type="radio" name="q3" value="1" required="required"> Bad
+                            </td>
+                        </tr>
+                  
+                        <td>Career Services & Support</td>
+                        <td>Did you receive sufficient support and guidance from career services for job placement or internships?</td>
+                        <td>
+                            <input type="text" placeholder="Enter your opinion" required="required" name="q4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Recommendations for Improvement</td>
+                        <td>Are there specific areas (e.g., academic programs, campus facilities, student services) where you think college could focus its efforts?</td>
+                        <td>
+                            <input type="text" placeholder="Enter your opinion" required="required" name="q5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Suggestions for Improvement</td>
+                        <td>What aspects of [College Name] do you believe could be improved or enhanced?</td>
+                        <td>
+                            <input type="text" placeholder="Enter your opinion" required="required" name="q6">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Facilities and Resources</td>
+                        <td>Were the campus facilities (e.g., libraries, labs, recreational facilities) adequate and well-maintained?</td>
+                        <td>
+                            <input type="radio" name="q7" value="5" required="required"> Excellent
+                            <input type="radio" name="q7" value="4"required="required"> Good
+                            <input type="radio" name="q7" value="3"required="required"> Satisfactory
+                            <input type="radio" name="q7" value="2"required="required"> Poor
+                            <input type="radio" name="q7" value="1"required="required"> Bad
+                        </td>
+                    </tr>
+                      
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td> <a><button type="reset">Reset</button></a></td>
+                         <td><a ><button type="submit">Submit feedback</button></a></td>
+                     </tr>
+                </tfoot>
+            </table>
+        </form>
+            </div>
+        </div>   
+    </div>
+    </body>
+    <script>
+        function refreshPage() {
+          location.reload(); 
+        }
+    </script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                function loadContent(url) {
+                    document.getElementById('bot1').innerHTML = ''; 
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            document.getElementById('bot1').innerHTML = data; 
+                        })
+                        .catch(error => {
+                            console.error('Error loading content:', error);
+                        });
+                }
+            
+                document.querySelectorAll('.dropdown a').forEach(function(link) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault(); 
+                        var url = this.getAttribute('href');
+                        loadContent(url);
+                    });
+                });
+                
+            });
+    
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const giveFeedbackBtn = document.getElementById('giveFeedbackBtn');
+            const formContainer = document.querySelector('.form');
+
+            giveFeedbackBtn.addEventListener('click', function() {
+                formContainer.style.display = 'block';
+            });
+        });
+    </script>
+            
+</html>

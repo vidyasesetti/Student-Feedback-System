@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            font-family: 'Poppins';   
+            background-color: rgb(255, 255, 255);
+        }
+        .bot1{
+            /* height: 90%; */
+            float: top;
+            background-color: rgb(255, 255, 255);
+            margin: 30px;
+        }
+        .container{
+            
+            height: 400px;
+            width:90%;
+            background-color: white;
+            box-shadow: 5px 5px 15px #cdd2d8;
+            border-radius: 10px;
+            /* align-items: center; */
+           /* margin:0 auto; */
+           margin: 40px;
+        }
+        .cont2{
+            display: flex;
+
+        }
+        .left-col,.right-col{
+            flex:1;padding: 10px;
+            margin: 30px;
+        }
+        .left-col p,.right-col p{
+            padding: 10px;
+        }
+        .heading h2{
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            /* border-bottom: 1px solid grey; */
+        }
+        .details li{
+            float: right;
+            /* margin-right: 10px; */
+            list-style-type: none;
+        }
+        @media (max-width: 768px) {
+        .container {
+            padding: 10px; 
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="bot1" id="bot1">
+        <div class="container">
+            <div class="heading">
+                <h2 style="margin: 30px;">Student Details</h2>
+                
+            </div>
+            <div class="cont2">
+                <table class="left-col">
+                    <tr>
+                        <td><p>Batch</p></td>
+                        <td>:</td>
+                        <td><p><%=student.ac_year %>  </p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Course</p></td>
+                        <td>:</td>
+                        <td><p> <%= student.course %></p></td>
+                    </tr>
+                    <tr>
+                        <td><p>student Name</p></td>
+                        <td>:</td>
+                        <td><p><%= student.name %></p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Mail Id</p></td>
+                        <td>:</td>
+                        <td><p> <%= student.email %></p></td>
+                    </tr>
+                    
+                </table>
+                <table class="right-col">
+                    <tr>
+                        <td><p>Department</p></td>
+                        <td>:</td>
+                        <td><p> <%= student.department %></p></td>
+                    </tr>
+                    <tr>
+                        <td><p>RollNo</p></td>
+                        <td>:</td>
+                        <td><p> <%= student.roll_no %></p></td>
+                    </tr>
+                    <tr>
+                        <td><p>PhnNo</p></td>
+                        <td>:</td>
+                        <td><p> <%= student.phn_no %></p></td>
+                    </tr>
+                    
+                   
+                </table>
+                
+                
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>

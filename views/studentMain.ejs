@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student</title>
+<style>
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            font-family: 'Poppins';   
+            background-color: rgb(255, 255, 255);
+        }
+        .sidebar{
+            width: 17%;
+            height: 100%;
+            float: left;
+            background-color:#263544 ;
+        }
+        .content{
+            background-color: rgb(255, 255, 255);
+            width: 83%;height: 100%;float: left;
+        }
+        .top{
+            height: 10%;
+            width: 100%;
+            box-shadow: 5px 5px 15px #242e39;
+            
+        }
+        .bottom{
+            width: 100%;
+        }
+        
+        .top1{
+            height:10%;
+            float: top;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 15px #cdd2d8;
+        }
+        .bot1{
+            /* height: 90%; */
+            float: top;
+            background-color: rgb(255, 255, 255);
+            margin: 30px;
+        }
+        .container{
+            
+            height: 400px;
+            width:90%;
+            background-color: white;
+            box-shadow: 5px 5px 15px #cdd2d8;
+            border-radius: 10px;
+            /* align-items: center; */
+           /* margin:0 auto; */
+           margin: 40px;
+        }
+        .cont2{
+            display: flex;
+
+        }
+        .left-col,.right-col{
+            flex:1;padding: 10px;
+            margin: 30px;
+        }
+        .left-col p,.right-col p{
+            padding: 10px;
+        }
+        .heading h2{
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .details li{
+            float: right;
+            list-style-type: none;
+        }
+                .logo img {
+                    width: 80px;
+                    height: 60px;
+                    margin: 12px 20px;
+                }
+                @media (max-width: 768px) {
+                    .container {
+                        padding: 10px; 
+                    }
+                    }
+
+            .dropdown-content {
+                color: white;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content h4 {
+                color: black; 
+            }
+
+            .dropdown-content h4 {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .dropdown-content a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 100;
+            }
+
+            .dropdown-content1 a:hover {
+                background-color: #ccc;
+            }
+            .dropdown-content1 {
+                color: white;
+            }
+
+            .dropdown1:hover .dropdown-content1 {
+                display: block;
+                background-color: #ffffff;
+            }
+
+            .dropdown1:hover .dropdown-content1 h4 {
+                color: black; 
+            }
+
+            .dropdown-content1 h4 {
+                margin: 10px;
+                padding: 10px;
+                /* margin-left: 20px; */
+            }
+
+            .dropdown-content1 a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 100;
+            }
+
+            .dropdown-content1 a:hover {
+                background-color: #ffffff;
+            }
+        .sub table {
+        border-collapse: collapse;
+        width: 60%;
+        }
+        .sub th,.sub td {
+        text-align: left;
+        padding: 8px;
+        }
+       .sub  th {
+        background-color: #242e39;
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        }
+        .sub tr:not(:last-child) {
+        border-bottom: 1px dotted rgb(103, 98, 98);
+        }
+        button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #242e39;
+            color: white;
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+</style>
+</head>
+<body id="body">
+    
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="https://onlinesystem.anits.edu.in/images/logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="bottom">
+            <ul style="font-size:larger;">
+            <li class="dropdown" style="color: white;">
+                <h4 style="margin: 10px;">Navigation</h4>
+                
+            </li><br>
+            <li class="dropdown">
+                <div class="dropdown-content">
+                    <a href="#" onclick="refreshPage()" id="fdb"><h4>Feedback</h4></a>
+                    </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-content">
+                    <a href="/sdashboard" id="dashboard"><h4>Dashboard</h4></a>
+                    </div>
+            </li>
+            
+           
+            <li class="dropdown">
+                <div class="dropdown-content">
+                   <a href="/changePassword" id="reset"><h4>Change Password</h4></a>
+                </div>
+            </li>
+            </ul>
+        </div>
+        <li class="dropdown1">
+            <div class="dropdown-content1">
+        <a href="/logout" id="logout" style="font-size:larger;"><h4>Logout</h4></a>
+            </div>
+        </li>
+        
+        
+    </div>
+    <div class="content">
+        <div class="top1">
+            <div class="details">
+                <ul> 
+                <li style="margin: 30px;margin-right: 70px;">
+                    <p id="uname"><%= student.name %></p><li>    
+                <li style="margin-right: 10px;margin-top: 15px;"><img style="border-radius: 50%;" id="accnt1" src="https://www.hirawatsonline.com/cdn/shop/collections/anil-neerukonda.jpg?v=1703148936&width=1500" height="50px"></li>
+                
+            </ul>
+            </div>
+           
+        </div>
+        <div class="bot1" id="bot1">
+            <h1>Welcome <%= student.name %>!</h1>
+
+            <br>
+           
+        
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Subject Name</th>
+                    <th>Faculty Name</th>
+                    <th>Feedback</th>
+                </tr>
+                <% courses.forEach((course, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= course.subject_name %></td>
+                        <td><%= course.name %></td>
+                        <td><%= course.feedback === 'wrong mark' ? '✘':'✔'   %></td>
+                    </tr>
+                <% }); %>
+            </table>
+            <div>
+                <!-- <button  class="button" onclick="window.location.href='/sfeedback'">Provide Feedback</button> -->
+            </div>
+           
+            
+           
+        </div>   
+    </div>
+    </body>
+   
+    <script>
+        function refreshPage() {
+          location.reload(); 
+        }
+    </script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                function loadContent(url) {
+                    document.getElementById('bot1').innerHTML = ''; 
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            document.getElementById('bot1').innerHTML = data; 
+                        })
+                        .catch(error => {
+                            console.error('Error loading content:', error);
+                        });
+                }
+            
+                document.querySelectorAll('.dropdown a').forEach(function(link) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault(); 
+                        var url = this.getAttribute('href');
+                        loadContent(url);
+                    });
+                });
+                
+            });
+    
+    </script>              
+             
+            
+</html>
